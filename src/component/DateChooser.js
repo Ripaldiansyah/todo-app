@@ -1,5 +1,5 @@
 export class DateChooser{
-    constructor(placeholder ) {
+    constructor() {
         this.dateChooser = document.createElement("input");
         this.dateChooser.type = "date";
     }

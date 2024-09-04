@@ -4,7 +4,6 @@ export class TextField{
         this.textField.placeholder = placeholder;
     }
 
-
     setTextField(container){
         if (container) {
           container.appendChild(this.textField)
