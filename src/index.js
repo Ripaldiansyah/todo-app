@@ -41,13 +41,9 @@ function handleSubmit(todoValue, dateValue) {
 
 }
 
-
-
 export function setIdUpdate(id){
         idUpdate = id;
 }
-
-
 
 function handleInsert(todoValue, dateValue){
 

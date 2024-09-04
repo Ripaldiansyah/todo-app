@@ -37,7 +37,6 @@ export class TodoService{
         const inputs = TODO_CONTAINER.querySelectorAll('input');
         inputs[0].value = todo ;
         inputs[1].value = date ;
-
         setIdUpdate(id)
 
     }
