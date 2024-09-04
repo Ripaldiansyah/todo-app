@@ -6,7 +6,23 @@
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <script src="index.js" type="module"></script>
+    <style>
+        .todo-list-container{
+            width: 60vh;
+        }
 
+        .todo-list-container table {
+            border: 1px solid black;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid black;
+            padding: 8px;
+        }
+
+
+    </style>
     <title>Todo App</title>
 </head>
 <body>
@@ -15,17 +31,36 @@
     <section class="change-background-section">
         <hr>
         <div class="color-container"></div>
-        <hr>
+
     </section>
     <section class="redirect-section">
         <hr>
         <div class="redirect-container"></div>
-        <hr>
+
     </section>
     <section class="todo-section">
         <hr>
-        <div class="todo-container"></div>
+        <div class="todo-container">
+        </div>
+    </section>
+    <section class="todo-list-section">
         <hr>
+        <div class="todo-list-container">
+            <table class="todo-data">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>TODO</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+
+            </table>
+        </div>
     </section>
 </main>
 </body>

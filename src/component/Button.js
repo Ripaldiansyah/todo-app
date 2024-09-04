@@ -6,7 +6,7 @@ export class Button {
     }
 
 
-    static addButton(buttons, container) {
+    static setButton(buttons, container) {
         for (const button of buttons) {
             const tempButton = new Button(button.name, button.action);
             if (container) {
