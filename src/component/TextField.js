@@ -9,5 +9,4 @@ export class TextField{
           container.appendChild(this.textField)
         }
     }
-
 }

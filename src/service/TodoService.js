@@ -6,7 +6,7 @@ import {setIdUpdate} from "../index.js";
 
 
 export class TodoService{
-
+    id = 1;
     createButton(text, onClick) {
         const button = new Button(text, onClick);
         return button.button;
@@ -39,6 +39,29 @@ export class TodoService{
         inputs[1].value = date ;
         setIdUpdate(id)
 
+    }
+
+
+    handleInsert(todoValue, dateValue){
+
+        const todo = {
+            id: this.id++,
+            todo: todoValue,
+            date: dateValue
+        };
+        todoData.push(todo);
+    }
+    handleUpdate(idUpdate, todoValue, dateValue){
+
+        const todo = {
+            id: idUpdate,
+            todo: todoValue,
+            date: dateValue
+        };
+
+        const index = todoData.findIndex(data=> data.id === idUpdate);
+        todoData[index] = todo
+        setIdUpdate(0)
     }
 
 

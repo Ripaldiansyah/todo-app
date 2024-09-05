@@ -1,6 +1,6 @@
 import { Button } from "./component/Button.js";
 import { colorData } from "./data/colorData.js";
-import { COLOR_CONTAINER, REDIRECT_CONTAINER, TODO_CONTAINER, TODO_DATA } from "./global/constants.js";
+import { COLOR_CONTAINER, REDIRECT_CONTAINER, TODO_CONTAINER } from "./global/constants.js";
 import { redirectData } from "./data/redirectData.js";
 import { TextField } from "./component/TextField.js";
 import { DateChooser } from "./component/DateChooser.js";
@@ -12,7 +12,6 @@ const todoField = new TextField("Enter todo...");
 const dateChooser = new DateChooser();
 const validation = new Validation();
 const todoService = new TodoService();
-let id = 1;
 let idUpdate =0;
 
 const submitButton = new Button("Submit", () => {
@@ -33,9 +32,7 @@ function handleSubmit(todoValue, dateValue) {
     if (!valid){
         return alert("Semua input wajib diisi")
     }
-
-    idUpdate === 0 ? handleInsert(todoValue,dateValue) : handleUpdate(idUpdate, todoValue,dateValue)
-
+    idUpdate === 0 ? todoService.handleInsert(todoValue,dateValue) : todoService.handleUpdate(idUpdate, todoValue,dateValue)
     clearField();
     todoService.readTodo();
 
@@ -45,27 +42,7 @@ export function setIdUpdate(id){
         idUpdate = id;
 }
 
-function handleInsert(todoValue, dateValue){
 
-    const todo = {
-        id: id++,
-        todo: todoValue,
-        date: dateValue
-    };
-    todoData.push(todo);
-}
-function handleUpdate(idUpdate, todoValue, dateValue){
-
-    const todo = {
-        id: idUpdate,
-        todo: todoValue,
-        date: dateValue
-    };
-
-   const index = todoData.findIndex(data=> data.id === idUpdate);
-   todoData[index] = todo
-    setIdUpdate(0)
-}
 
 function clearField() {
     todoField.textField.value = '';
